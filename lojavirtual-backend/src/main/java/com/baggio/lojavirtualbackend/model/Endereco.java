@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "marca_produto")
 @SequenceGenerator(name = "seq_marca_produto", sequenceName = "seq_marca_produto", 
 					allocationSize = 1, initialValue = 1)//Organiza as sequancias do banco para sempre ficar de 1 em 1
-public class MarcaProduto implements Serializable{
+public class Endereco implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,10 +26,10 @@ public class MarcaProduto implements Serializable{
 	@Column(name = "nome_desc", nullable = false)
 	private String nomeDesc;
 
-	public MarcaProduto() {
+	public Endereco() {
 	}
 	
-	public MarcaProduto(Long id, String nomeDesc) {
+	public Endereco(Long id, String nomeDesc) {
 		this.id = id;
 		this.nomeDesc = nomeDesc;
 	}
@@ -63,7 +63,7 @@ public class MarcaProduto implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MarcaProduto other = (MarcaProduto) obj;
+		Endereco other = (Endereco) obj;
 		return Objects.equals(id, other.id);
 	}
 	
