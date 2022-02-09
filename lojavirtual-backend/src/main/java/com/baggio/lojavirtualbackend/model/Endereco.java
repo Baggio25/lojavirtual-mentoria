@@ -6,6 +6,8 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.ConstraintMode;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.baggio.lojavirtualbackend.model.enums.TipoEndereco;
 
 @Entity
 @Table(name = "endereco")
@@ -46,6 +50,10 @@ public class Endereco implements Serializable {
 
 	@Column(nullable = false)
 	private String uf;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "tipo_endereco")
+	private TipoEndereco tipoEndereco;
 
 	@ManyToOne(targetEntity = Pessoa.class)
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
@@ -55,7 +63,7 @@ public class Endereco implements Serializable {
 	}
 
 	public Endereco(Long id, String ruaLogradouro, String cep, String numero, String complemento, String bairro,
-			String cidade, String uf, Pessoa pessoa) {
+			String cidade, String uf, TipoEndereco tipoEndereco, Pessoa pessoa) {
 		this.id = id;
 		this.ruaLogradouro = ruaLogradouro;
 		this.cep = cep;
@@ -65,6 +73,7 @@ public class Endereco implements Serializable {
 		this.cidade = cidade;
 		this.uf = uf;
 		this.pessoa = pessoa;
+		this.tipoEndereco = tipoEndereco;
 	}
 
 	public Long getId() {
@@ -131,6 +140,14 @@ public class Endereco implements Serializable {
 		this.uf = uf;
 	}
 
+	public void setTipoEndereco(TipoEndereco tipoEndereco) {
+		this.tipoEndereco = tipoEndereco;
+	}
+	
+	public TipoEndereco getTipoEndereco() {
+		return tipoEndereco;
+	}
+	
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
