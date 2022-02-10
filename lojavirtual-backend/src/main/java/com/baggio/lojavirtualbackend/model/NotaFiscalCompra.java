@@ -36,7 +36,7 @@ public class NotaFiscalCompra implements Serializable {
 	@Column(name = "serie_nota", nullable = false)
 	private String serieNota;
 
-	@Column(name = "descricao_observacao", nullable = false)
+	@Column(name = "descricao_observacao")
 	private String descricaoObservacao;
 
 	@Column(name = "valor_total", nullable = false)

@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -46,6 +47,10 @@ public class Usuario implements UserDetails {
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false, name = "data_atual_senha")
 	private Date dataAtualSenha;
+	
+	@ManyToOne
+	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
+	private Pessoa pessoa;
 
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "usuario_acesso", 
@@ -73,11 +78,12 @@ public class Usuario implements UserDetails {
 	public Usuario() {
 	}
 
-	public Usuario(Long id, String login, String senha, Date dataAtualSenha) {
+	public Usuario(Long id, String login, String senha, Date dataAtualSenha, Pessoa pessoa) {
 		this.id = id;
 		this.login = login;
 		this.senha = senha;
 		this.dataAtualSenha = dataAtualSenha;
+		this.pessoa = pessoa;
 	}
 
 	// --- UserDetails ---
@@ -156,6 +162,14 @@ public class Usuario implements UserDetails {
 
 	public void setAcessos(List<Acesso> acessos) {
 		this.acessos = acessos;
+	}
+	
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
 	@Override

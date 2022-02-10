@@ -37,7 +37,7 @@ public class VendaLojaVirtual implements Serializable {
 	@Column(name = "valor_desconto")
 	private BigDecimal valorDesconto;
 	
-	@Column(name = "valor_frete")
+	@Column(nullable = false, name = "valor_frete")
 	private BigDecimal valorFrete;
 	
 	@Column(nullable = false, name = "dias_entrega")
@@ -72,7 +72,7 @@ public class VendaLojaVirtual implements Serializable {
 	private NotaFiscalVenda notaFiscalVenda;
 
 	@ManyToOne(targetEntity = NotaFiscalVenda.class)
-	@JoinColumn(name = "cupom_desconto_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "cupom_desconto_fk"))
+	@JoinColumn(name = "cupom_desconto_id", foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "cupom_desconto_fk"))
 	private CupomDesconto cupomDesconto;
 	
 	public VendaLojaVirtual() {

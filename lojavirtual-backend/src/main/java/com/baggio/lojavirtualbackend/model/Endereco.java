@@ -39,7 +39,6 @@ public class Endereco implements Serializable {
 	@Column(nullable = false)
 	private String numero;
 
-	@Column(nullable = false)
 	private String complemento;
 
 	@Column(nullable = false)
