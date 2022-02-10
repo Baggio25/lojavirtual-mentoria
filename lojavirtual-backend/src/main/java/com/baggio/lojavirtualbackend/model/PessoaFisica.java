@@ -23,6 +23,9 @@ public class PessoaFisica extends Pessoa {
 	@Column(name = "data_nascimento")
 	private Date dataNascimento;
 	
+	public PessoaFisica() {
+	}
+	
 	public PessoaFisica(Long id, String nome, String email, String telefone, String cpf, Date dataNascimento) {
 		super(id, nome, email, telefone);
 		this.cpf = cpf;

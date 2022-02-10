@@ -64,7 +64,7 @@ public class ContaPagar implements Serializable {
 	private Pessoa pessoaFornecedor;
 	
 	@ManyToOne(targetEntity = FormaPagamento.class)
-	@JoinColumn(name = "pagamento_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pagamento_fk"))
+	@JoinColumn(name = "forma_pagamento_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "forma_pagamento_fk"))
 	private FormaPagamento formaPagamento;
 
 	public ContaPagar() {

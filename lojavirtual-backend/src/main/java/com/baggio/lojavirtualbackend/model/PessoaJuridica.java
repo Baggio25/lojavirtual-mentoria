@@ -29,6 +29,9 @@ public class PessoaJuridica extends Pessoa{
 	
 	private String categoria;
 	
+	public PessoaJuridica() {
+	}
+	
 	public PessoaJuridica(Long id, String nome, String email, String telefone, String cnpj, String inscricaoEstadual,
 			String inscricaoMunicipal, String nomeFantasia, String razaoSocial, String categoria) {
 		super(id, nome, email, telefone);

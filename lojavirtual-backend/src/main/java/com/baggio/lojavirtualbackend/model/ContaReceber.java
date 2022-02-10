@@ -59,15 +59,11 @@ public class ContaReceber implements Serializable {
 	@JoinColumn(name = "pessoa_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pessoa_fk"))
 	private Pessoa pessoa;
 
-	@ManyToOne(targetEntity = FormaPagamento.class)
-	@JoinColumn(name = "pagamento_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "pagamento_fk"))
-	private FormaPagamento formaPagamento;
-
 	public ContaReceber() {
 	}
 
 	public ContaReceber(Long id, String descricao, StatusContaReceber status, Date dataVencimento, Date dataPagamento,
-			BigDecimal valorTotal, BigDecimal valorDesconto, Pessoa pessoa, FormaPagamento formaPagamento) {
+			BigDecimal valorTotal, BigDecimal valorDesconto, Pessoa pessoa) {
 		this.id = id;
 		this.descricao = descricao;
 		this.status = status;
@@ -76,7 +72,6 @@ public class ContaReceber implements Serializable {
 		this.valorTotal = valorTotal;
 		this.valorDesconto = valorDesconto;
 		this.pessoa = pessoa;
-		this.formaPagamento = formaPagamento;
 	}
 
 	public Long getId() {
@@ -142,15 +137,6 @@ public class ContaReceber implements Serializable {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
-	public FormaPagamento getFormaPagamento() {
-		return formaPagamento;
-	}
-
-	public void setFormaPagamento(FormaPagamento formaPagamento) {
-		this.formaPagamento = formaPagamento;
-	}
-
 
 	@Override
 	public int hashCode() {
