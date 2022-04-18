@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.baggio.lojavirtualbackend.model.Acesso;
 import com.baggio.lojavirtualbackend.service.AcessoService;
 
-@SpringBootTest
+@SpringBootTest(classes = LojavirtualBackendApplication.class)
 class LojavirtualBackendApplicationTests {
 
 
@@ -17,7 +17,7 @@ class LojavirtualBackendApplicationTests {
 	@Test
 	public void testCadastraAcesso() {
 		Acesso acesso = new Acesso();
-		acesso.setDescricao("ROLE_CLIENTE");
+		acesso.setDescricao("ROLE_ADMIN");
 		
 		acessoService.save(acesso);
 	}

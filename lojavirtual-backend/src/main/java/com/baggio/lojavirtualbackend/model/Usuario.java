@@ -1,7 +1,6 @@
 package com.baggio.lojavirtualbackend.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -24,13 +23,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 @Entity
 @Table(name = "usuario")
 @SequenceGenerator(name = "seq_usuario", sequenceName = "seq_usuario", allocationSize = 1, initialValue = 1)
-public class Usuario implements UserDetails {
+public class Usuario  {
 
 	private static final long serialVersionUID = 1L;
 
@@ -87,7 +83,7 @@ public class Usuario implements UserDetails {
 	}
 
 	// --- UserDetails ---
-	@Override
+	/*@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.acessos;
 	}
@@ -120,7 +116,7 @@ public class Usuario implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
-	}
+	}*/
 
 	// ------------------
 
