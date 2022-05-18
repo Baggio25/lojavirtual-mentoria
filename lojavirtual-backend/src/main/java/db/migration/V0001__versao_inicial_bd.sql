@@ -379,83 +379,83 @@ CREATE TRIGGER validachavepessoaavaliacaoproduto
     BEFORE UPDATE 
     ON public.avaliacao_produto
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 
 CREATE TRIGGER validachavepessoaavaliacaoprodutoinsert
     BEFORE INSERT
     ON public.avaliacao_produto
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoacontapagarinsert
     BEFORE INSERT
     ON public.conta_pagar
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoacontapagarupdate
     BEFORE UPDATE 
     ON public.conta_pagar
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoaforncontapagarinsert
     BEFORE INSERT
     ON public.conta_pagar
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoafornecedor();
+    EXECUTE PROCEDURE public.validachavepessoafornecedor();
 	
 CREATE TRIGGER validachavepessoaforncontapagarupdate
     BEFORE UPDATE 
     ON public.conta_pagar
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoafornecedor();
+    EXECUTE PROCEDURE public.validachavepessoafornecedor();
 
 
 CREATE TRIGGER validachavepessoacontareceberinsert
     BEFORE INSERT
     ON public.conta_receber
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoacontareceberupdate
     BEFORE UPDATE 
     ON public.conta_receber
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 
 CREATE TRIGGER validachavepessoaenderecoinsert
     BEFORE INSERT
     ON public.endereco
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoaenderecoupdate
     BEFORE UPDATE 
     ON public.endereco
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoanotafiscalcomprainsert
     BEFORE INSERT
     ON public.nota_fiscal_compra
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoanotafiscalcompraupdate
     BEFORE UPDATE 
     ON public.nota_fiscal_compra
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 
 CREATE TRIGGER validachavepessoausuarioinsert
     BEFORE INSERT
     ON public.usuario
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
 	
 CREATE TRIGGER validachavepessoausuarioupdate
     BEFORE UPDATE 
     ON public.usuario
     FOR EACH ROW
-    EXECUTE FUNCTION public.validachavepessoa();
+    EXECUTE PROCEDURE public.validachavepessoa();
